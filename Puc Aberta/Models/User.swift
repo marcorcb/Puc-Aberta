@@ -13,8 +13,8 @@ struct User: Mappable {
     var cnpj: String?
     var school: String?
     var grade: String?
-    var lectures: [Lecture]
-    var courses: [Course]
+    var lectures: [Lecture]?
+    var courses: [Course]?
     
     init(mapper: Mapper) {
         self.name = mapper.keyPath("inscrito.nome")

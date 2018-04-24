@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol ScheduleViewControllerDelegate: class {
-    func didSelect(event: Event, unit: Unit, isSubscribed: Bool)
-}
-
 class ScheduleViewController: BaseViewController {
     
     // MARK: - IBOutlets
@@ -22,8 +18,6 @@ class ScheduleViewController: BaseViewController {
     
     // MARK: - Members
     
-    weak var delegate: ScheduleViewControllerDelegate?
-    var user: User?
     private let schedulePresenter = SchedulePresenter()
     fileprivate var units = [Unit]()
     fileprivate var dataSource = [Event]() {
@@ -47,7 +41,7 @@ class ScheduleViewController: BaseViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 105
+        self.tableView.estimatedRowHeight = 120
         self.schedulePresenter.attachView(self)
         self.schedulePresenter.setupJSON()
     }
@@ -97,15 +91,12 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
-        cell.user = self.user
         cell.event = self.dataSource[indexPath.row]
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? EventTableViewCell else { return }
-        self.delegate?.didSelect(event: self.dataSource[indexPath.row], unit: self.units.first!, isSubscribed: !cell.subscribedEventImageView.isHidden)
-        tableView.deselectRow(at: indexPath, animated: true)
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
 }
 

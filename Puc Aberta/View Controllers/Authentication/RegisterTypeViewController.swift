@@ -21,12 +21,12 @@ class RegisterTypeViewController: BaseViewController {
     // MARK: - IBActions
 
     @IBAction func soloRegister(_ sender: Any) {
-        guard let url = URL(string: "http://portal.pucminas.br/pucaberta2018-homologacao") else { return }
+        guard let url = URL(string: "http://portal.pucminas.br/pucaberta/inscrito_cadastro.php") else { return }
         self.delegate?.didSelectRegister(url: url)
     }
     
     @IBAction func schoolRegister(_ sender: Any) {
-        guard let url = URL(string: "http://portal.pucminas.br/pucaberta2018-homologacao/escola") else { return }
+        guard let url = URL(string: "http://portal.pucminas.br/pucaberta/escola/escola_cadastro.php") else { return }
         self.delegate?.didSelectRegister(url: url)
     }
 }

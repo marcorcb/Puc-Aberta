@@ -9,6 +9,7 @@
 struct Event: Mappable {
     var group: String
     var description: String
+    var image: String
     var location: String
     var startTime: String
     var courses: String
@@ -17,6 +18,7 @@ struct Event: Mappable {
         self.group = mapper.keyPath("group")
         self.description = mapper.keyPath("description")
         self.location = mapper.keyPath("location")
+        self.image = mapper.keyPath("image")
         self.startTime = mapper.keyPath("start_time")
         self.courses = mapper.keyPath("courses")
     }

@@ -24,6 +24,7 @@ class AuthenticationCoordinator: Coordinator {
     }
     
     func start() {
+        self.navigationController.navigationBar.isHidden = false
         self.navigationController.navigationBar.barTintColor = #colorLiteral(red: 0.08235294118, green: 0.2549019608, blue: 0.3647058824, alpha: 1)
         self.navigationController.navigationBar.tintColor = .white
         self.showLogin()

@@ -9,13 +9,15 @@
 import UIKit
 
 class MapCoordinator: Coordinator {
-    var coordinatorDelegate: CoordinatorDelegate?
+    weak var coordinatorDelegate: CoordinatorDelegate?
     var childCoordinators: [Coordinator] = []
     var navigationController: BaseNavigationController
+    var user: User
     
-    init(navigationController: BaseNavigationController, delegate: CoordinatorDelegate?) {
+    init(navigationController: BaseNavigationController, delegate: CoordinatorDelegate?, user: User) {
         self.coordinatorDelegate = delegate
         self.navigationController = navigationController
+        self.user = user
     }
     
     func start() {
@@ -26,6 +28,7 @@ class MapCoordinator: Coordinator {
     
     func showMap() {
         let mapViewController = MapViewController.initFromStoryboard(named: "Home")
+        mapViewController.user = self.user
         self.navigationController.pushViewController(mapViewController, animated: false)
     }
 }

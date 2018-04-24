@@ -31,6 +31,7 @@ class HomeCoordinator: Coordinator {
     func start() {
         self.createMapCoordinator()
         self.createScheduleCoordinator()
+        self.createMyScheduleCoordinator()
         self.createCoursesCoordinator()
         self.createMenuCoordinator()
         self.tabBarController.viewControllers = self.childCoordinators.map { $0.navigationController }
@@ -42,7 +43,7 @@ class HomeCoordinator: Coordinator {
     
     func createMapCoordinator() {
         let navigationController = BaseNavigationController()
-        let coordinator = MapCoordinator(navigationController: navigationController, delegate: self)
+        let coordinator = MapCoordinator(navigationController: navigationController, delegate: self, user: self.user)
         coordinator.start()
         self.childCoordinators.append(coordinator)
     }
@@ -50,6 +51,13 @@ class HomeCoordinator: Coordinator {
     func createScheduleCoordinator() {
         let navigationController = BaseNavigationController()
         let coordinator = ScheduleCoordinator(navigationController: navigationController, delegate: self, user: self.user)
+        coordinator.start()
+        self.childCoordinators.append(coordinator)
+    }
+    
+    func createMyScheduleCoordinator() {
+        let navigationController = BaseNavigationController()
+        let coordinator = MyScheduleCoordinator(navigationController: navigationController, delegate: self, user: self.user)
         coordinator.start()
         self.childCoordinators.append(coordinator)
     }
@@ -75,5 +83,15 @@ extension HomeCoordinator: MenuCoordinatorDelegate {
     func didConfirmLogout() {
         self.navigationController.setNavigationBarHidden(false, animated: false)
         self.delegate?.didLogout(on: self)
+    }
+}
+
+// MARK: - MyScheduleCoordinatorDelegate
+
+extension HomeCoordinator: MyScheduleCoordinatorDelegate {
+    func openOnMap(lecture: String) {
+        UserDefaults.standard.set(String(lecture.prefix(7)), forKey: Constants.userLectureKey)
+        NotificationCenter.default.post(name: .openOnMap, object: nil)
+        self.tabBarController.selectedIndex = 0
     }
 }

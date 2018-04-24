@@ -40,6 +40,11 @@ class MenuCoordinator: Coordinator {
         let twitterViewController = TwitterViewController.initFromStoryboard(named: "Menu")
         self.navigationController.pushViewController(twitterViewController, animated: true)
     }
+    
+    func showAbout() {
+        let aboutViewController = AboutViewController.initFromStoryboard(named: "Menu")
+        self.navigationController.pushViewController(aboutViewController, animated: true)
+    }
 }
 
 // MARK: - MenuTableViewControllerDelegate
@@ -47,6 +52,10 @@ class MenuCoordinator: Coordinator {
 extension MenuCoordinator: MenuTableViewControllerDelegate {
     func didSelectTwitter() {
         self.showTwitter()
+    }
+    
+    func didSelectAbout() {
+        self.showAbout()
     }
     
     func didConfirmLogout() {

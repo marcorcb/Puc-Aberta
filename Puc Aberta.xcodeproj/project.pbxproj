@@ -19,7 +19,6 @@
 		031D128620486EE800A26D85 /* PAHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D128520486EE800A26D85 /* PAHelper.swift */; };
 		032717BD2062E7E800483358 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032717BC2062E7E800483358 /* Menu.storyboard */; };
 		032717C02062E80B00483358 /* TwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032717BF2062E80B00483358 /* TwitterViewController.swift */; };
-		032717C22062E9F900483358 /* twitterLive.html in Resources */ = {isa = PBXBuildFile; fileRef = 032717C12062E9F900483358 /* twitterLive.html */; };
 		032717C42062F07300483358 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032717C32062F07300483358 /* RegisterViewController.swift */; };
 		033A1E54204AB77E004C3262 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A1E53204AB77E004C3262 /* MapViewController.swift */; };
 		033A1E56204AB7A6004C3262 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A1E55204AB7A6004C3262 /* MapCoordinator.swift */; };
@@ -43,8 +42,7 @@
 		034CB34A205FE69D0028E934 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CB349205FE69D0028E934 /* Constants.swift */; };
 		034CB34C205FEEDD0028E934 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CB34B205FEEDD0028E934 /* SplashViewController.swift */; };
 		034CB34E205FEEE70028E934 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CB34D205FEEE70028E934 /* SplashPresenter.swift */; };
-		034CB350205FFBB30028E934 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034CB34F205FFBB30028E934 /* Schedule.storyboard */; };
-		034CB353205FFCEF0028E934 /* ScheduleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034CB352205FFCEF0028E934 /* ScheduleDetailsViewController.swift */; };
+		036CDCF1208D570800DC89E6 /* MyScheduleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036CDCF0208D570800DC89E6 /* MyScheduleCoordinator.swift */; };
 		037CF7A5204DB4C500CBE479 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 037CF7A4204DB4C500CBE479 /* events.json */; };
 		037CF7A7204E190A00CBE479 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CF7A6204E190A00CBE479 /* Mappable.swift */; };
 		037CF7A9204E195200CBE479 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CF7A8204E195200CBE479 /* Unit.swift */; };
@@ -53,6 +51,10 @@
 		037CF7B1204E1D4C00CBE479 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CF7AE204E1D4C00CBE479 /* API.swift */; };
 		037CF7B2204E1D4C00CBE479 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CF7AF204E1D4C00CBE479 /* APIRequest.swift */; };
 		037CF7B3204E1D4C00CBE479 /* APICacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037CF7B0204E1D4C00CBE479 /* APICacheManager.swift */; };
+		038C28E5208E478C00997313 /* MyScheduleViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038C28E4208E478C00997313 /* MyScheduleViewControllerViewController.swift */; };
+		038C28E7208E4B4600997313 /* MyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038C28E6208E4B4600997313 /* MyEventTableViewCell.swift */; };
+		038C28E9208E8B9100997313 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038C28E8208E8B9100997313 /* AboutViewController.swift */; };
+		03EB0AEC207C4C7E00B23DAE /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EB0AEB207C4C7E00B23DAE /* Building.swift */; };
 		03F1FA252046F0690008EA63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1FA242046F0690008EA63 /* AppDelegate.swift */; };
 		03F1FA2C2046F0690008EA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F1FA2B2046F0690008EA63 /* Assets.xcassets */; };
 		03F1FA382046F2970008EA63 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F1FA372046F2970008EA63 /* Coordinator.swift */; };
@@ -81,7 +83,6 @@
 		031D128520486EE800A26D85 /* PAHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAHelper.swift; sourceTree = "<group>"; };
 		032717BC2062E7E800483358 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		032717BF2062E80B00483358 /* TwitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterViewController.swift; sourceTree = "<group>"; };
-		032717C12062E9F900483358 /* twitterLive.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = twitterLive.html; sourceTree = "<group>"; };
 		032717C32062F07300483358 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		033A1E53204AB77E004C3262 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		033A1E55204AB7A6004C3262 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
@@ -105,8 +106,7 @@
 		034CB349205FE69D0028E934 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		034CB34B205FEEDD0028E934 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		034CB34D205FEEE70028E934 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
-		034CB34F205FFBB30028E934 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
-		034CB352205FFCEF0028E934 /* ScheduleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailsViewController.swift; sourceTree = "<group>"; };
+		036CDCF0208D570800DC89E6 /* MyScheduleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleCoordinator.swift; sourceTree = "<group>"; };
 		037CF7A4204DB4C500CBE479 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
 		037CF7A6204E190A00CBE479 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		037CF7A8204E195200CBE479 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
@@ -115,6 +115,10 @@
 		037CF7AE204E1D4C00CBE479 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		037CF7AF204E1D4C00CBE479 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		037CF7B0204E1D4C00CBE479 /* APICacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICacheManager.swift; sourceTree = "<group>"; };
+		038C28E4208E478C00997313 /* MyScheduleViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleViewControllerViewController.swift; sourceTree = "<group>"; };
+		038C28E6208E4B4600997313 /* MyEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventTableViewCell.swift; sourceTree = "<group>"; };
+		038C28E8208E8B9100997313 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		03EB0AEB207C4C7E00B23DAE /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		03F1FA212046F0690008EA63 /* Puc Aberta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Puc Aberta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F1FA242046F0690008EA63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03F1FA2B2046F0690008EA63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,12 +150,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		032717BE2062E7F700483358 /* Social */ = {
+		032717BE2062E7F700483358 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				032717BF2062E80B00483358 /* TwitterViewController.swift */,
+				038C28E8208E8B9100997313 /* AboutViewController.swift */,
 			);
-			path = Social;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		033A1E52204AB76F004C3262 /* Home */ = {
@@ -161,6 +166,7 @@
 				033A1E53204AB77E004C3262 /* MapViewController.swift */,
 				034662DD204B5BB8000E915C /* ScheduleViewController.swift */,
 				037CF7AC204E1C0C00CBE479 /* SchedulePresenter.swift */,
+				038C28E4208E478C00997313 /* MyScheduleViewControllerViewController.swift */,
 				034662D9204B595E000E915C /* CoursesViewController.swift */,
 				034662D3204B50F0000E915C /* MenuTableViewController.swift */,
 			);
@@ -171,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				034CB334205970310028E934 /* EventTableViewCell.swift */,
+				038C28E6208E4B4600997313 /* MyEventTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -181,14 +188,6 @@
 				034CB341205FCA350028E934 /* LoginService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		034CB351205FFCD90028E934 /* Schedule */ = {
-			isa = PBXGroup;
-			children = (
-				034CB352205FFCEF0028E934 /* ScheduleDetailsViewController.swift */,
-			);
-			path = Schedule;
 			sourceTree = "<group>";
 		};
 		03F1FA182046F0690008EA63 = {
@@ -233,6 +232,7 @@
 				03F1FA3B2046F2C10008EA63 /* HomeCoordinator.swift */,
 				033A1E55204AB7A6004C3262 /* MapCoordinator.swift */,
 				034662DB204B5B9A000E915C /* ScheduleCoordinator.swift */,
+				036CDCF0208D570800DC89E6 /* MyScheduleCoordinator.swift */,
 				034662D7204B58D3000E915C /* CoursesCoordinator.swift */,
 				034662D5204B517C000E915C /* MenuCoordinator.swift */,
 			);
@@ -253,8 +253,7 @@
 				03F1FA4D2046F4480008EA63 /* Base */,
 				03F1FA552046F6BD0008EA63 /* Authentication */,
 				033A1E52204AB76F004C3262 /* Home */,
-				034CB351205FFCD90028E934 /* Schedule */,
-				032717BE2062E7F700483358 /* Social */,
+				032717BE2062E7F700483358 /* Menu */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -265,7 +264,6 @@
 				03F1FA472046F3EF0008EA63 /* Launch Screen.storyboard */,
 				031D127A2048584900A26D85 /* Authentication.storyboard */,
 				031D127D2048584E00A26D85 /* Home.storyboard */,
-				034CB34F205FFBB30028E934 /* Schedule.storyboard */,
 				032717BC2062E7E800483358 /* Menu.storyboard */,
 			);
 			path = Storyboards;
@@ -288,7 +286,6 @@
 				03F1FA2B2046F0690008EA63 /* Assets.xcassets */,
 				03F1FA302046F0690008EA63 /* Info.plist */,
 				037CF7A4204DB4C500CBE479 /* events.json */,
-				032717C12062E9F900483358 /* twitterLive.html */,
 				031D126A20482BD100A26D85 /* Puc Aberta-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
@@ -321,6 +318,7 @@
 				034CB343205FD06B0028E934 /* User.swift */,
 				034CB345205FD2C40028E934 /* Lecture.swift */,
 				034CB347205FD71F0028E934 /* Course.swift */,
+				03EB0AEB207C4C7E00B23DAE /* Building.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -398,7 +396,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Marco Braga";
 				TargetAttributes = {
 					03F1FA202046F0690008EA63 = {
@@ -436,8 +434,6 @@
 				03F1FA482046F3EF0008EA63 /* Launch Screen.storyboard in Resources */,
 				03F1FA2C2046F0690008EA63 /* Assets.xcassets in Resources */,
 				031D127B2048584E00A26D85 /* Home.storyboard in Resources */,
-				032717C22062E9F900483358 /* twitterLive.html in Resources */,
-				034CB350205FFBB30028E934 /* Schedule.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +521,7 @@
 				031D126920482B0B00A26D85 /* JMStringMask.swift in Sources */,
 				034662D4204B50F0000E915C /* MenuTableViewController.swift in Sources */,
 				034B0A2320615089007696B7 /* PAView.swift in Sources */,
+				038C28E7208E4B4600997313 /* MyEventTableViewCell.swift in Sources */,
 				034662D0204B4A61000E915C /* RegisterTypeViewController.swift in Sources */,
 				034CB346205FD2C40028E934 /* Lecture.swift in Sources */,
 				034662DA204B595E000E915C /* CoursesViewController.swift in Sources */,
@@ -532,7 +529,6 @@
 				034CB335205970310028E934 /* EventTableViewCell.swift in Sources */,
 				037CF7A7204E190A00CBE479 /* Mappable.swift in Sources */,
 				034662D2204B50BD000E915C /* BaseTableViewController.swift in Sources */,
-				034CB353205FFCEF0028E934 /* ScheduleDetailsViewController.swift in Sources */,
 				03F1FA572046F9260008EA63 /* LoginViewController.swift in Sources */,
 				034CB34A205FE69D0028E934 /* Constants.swift in Sources */,
 				031D128620486EE800A26D85 /* PAHelper.swift in Sources */,
@@ -542,10 +538,12 @@
 				031D126320482A8800A26D85 /* PAAlertController.swift in Sources */,
 				03F1FA3E2046F2DD0008EA63 /* AuthenticationCoordinator.swift in Sources */,
 				037CF7B2204E1D4C00CBE479 /* APIRequest.swift in Sources */,
+				038C28E5208E478C00997313 /* MyScheduleViewControllerViewController.swift in Sources */,
 				032717C02062E80B00483358 /* TwitterViewController.swift in Sources */,
 				034CB34C205FEEDD0028E934 /* SplashViewController.swift in Sources */,
 				034662DE204B5BB8000E915C /* ScheduleViewController.swift in Sources */,
 				034CB348205FD71F0028E934 /* Course.swift in Sources */,
+				036CDCF1208D570800DC89E6 /* MyScheduleCoordinator.swift in Sources */,
 				033A1E56204AB7A6004C3262 /* MapCoordinator.swift in Sources */,
 				037CF7A9204E195200CBE479 /* Unit.swift in Sources */,
 				032717C42062F07300483358 /* RegisterViewController.swift in Sources */,
@@ -557,6 +555,7 @@
 				031D126720482AFC00A26D85 /* JMMaskTextField.swift in Sources */,
 				037CF7B1204E1D4C00CBE479 /* API.swift in Sources */,
 				034CB344205FD06B0028E934 /* User.swift in Sources */,
+				03EB0AEC207C4C7E00B23DAE /* Building.swift in Sources */,
 				031D127020483EEF00A26D85 /* PADatePickerField.swift in Sources */,
 				037CF7AD204E1C0C00CBE479 /* SchedulePresenter.swift in Sources */,
 				033A1E54204AB77E004C3262 /* MapViewController.swift in Sources */,
@@ -568,6 +567,7 @@
 				037CF7B3204E1D4C00CBE479 /* APICacheManager.swift in Sources */,
 				031D126E20483DB000A26D85 /* PAButton.swift in Sources */,
 				03F1FA252046F0690008EA63 /* AppDelegate.swift in Sources */,
+				038C28E9208E8B9100997313 /* AboutViewController.swift in Sources */,
 				034662DC204B5B9A000E915C /* ScheduleCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +609,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -616,6 +617,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -667,6 +669,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -674,6 +677,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -711,16 +715,16 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = U5QEBJ5PWK;
+				DEVELOPMENT_TEAM = MRZG3L9NLC;
 				INFOPLIST_FILE = "$(SRCROOT)/Puc Aberta/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "marcorcb.puc-aberta-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = br.pucmg.pucaberta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Puc Aberta/Supporting Files/Puc Aberta-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -731,15 +735,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U5QEBJ5PWK;
+				DEVELOPMENT_TEAM = MRZG3L9NLC;
 				INFOPLIST_FILE = "$(SRCROOT)/Puc Aberta/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "marcorcb.puc-aberta-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = br.pucmg.pucaberta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Puc Aberta/Supporting Files/Puc Aberta-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

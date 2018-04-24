@@ -10,6 +10,7 @@ import UIKit
 
 protocol MenuTableViewControllerDelegate: class {
     func didSelectTwitter()
+    func didSelectAbout()
     func didConfirmLogout()
 }
 
@@ -35,7 +36,7 @@ class MenuTableViewController: BaseTableViewController {
     // MARK: - UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -44,6 +45,9 @@ class MenuTableViewController: BaseTableViewController {
             self.delegate?.didSelectTwitter()
             break
         case 1:
+            self.delegate?.didSelectAbout()
+            break
+        case 2:
             let cancelAction = PAAlertAction(title: "NÃO")
             let confirmAction = PAAlertAction(title: "SIM") {
                 self.delegate?.didConfirmLogout()

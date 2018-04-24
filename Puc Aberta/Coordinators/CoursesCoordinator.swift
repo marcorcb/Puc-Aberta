@@ -9,7 +9,7 @@
 import UIKit
 
 class CoursesCoordinator: Coordinator {
-    var coordinatorDelegate: CoordinatorDelegate?
+    weak var coordinatorDelegate: CoordinatorDelegate?
     var childCoordinators: [Coordinator] = []
     var navigationController: BaseNavigationController
     

@@ -66,6 +66,6 @@ extension SplashViewController: SplashProtocol {
     }
     
     func didFailToAuthenticate() {
-        self.didFailToAuthenticate()
+        self.delegate?.didFailToAuthenticate()
     }
 }

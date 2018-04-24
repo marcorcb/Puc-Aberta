@@ -9,4 +9,9 @@
 struct Constants {
     static let userCpfKey = "userCpfKey"
     static let userBirthdateKey = "userBirthdateKey"
+    static let userLectureKey = "userLectureKey"
+}
+
+extension Notification.Name {
+    static let openOnMap = Notification.Name("openOnMap")
 }

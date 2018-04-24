@@ -51,7 +51,7 @@ class LoginPresenter {
                 self.saveLoginFields(cpf: cpf, birthdate: birthdate)
                 self.loginView?.didAuthenticate(with: user)
             } else {
-                
+                self.loginView?.showAlert(message: "Usuário não encontrado")
             }
         }
     }

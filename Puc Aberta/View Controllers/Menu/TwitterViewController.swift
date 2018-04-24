@@ -25,8 +25,8 @@ class TwitterViewController: BaseViewController {
     // MARK: - Private
 
     func setup() {
-        let htmlPath = Bundle.main.url(forResource: "twitterLive", withExtension: "html")
-        let request = URLRequest.init(url: htmlPath!)
+        let url = URL(string: "https://twitter.com/hashtag/PucAberta")
+        let request = URLRequest.init(url: url!)
         self.webView.loadRequest(request)
     }
 }

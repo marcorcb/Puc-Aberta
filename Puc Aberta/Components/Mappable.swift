@@ -158,7 +158,7 @@ extension Mapper {
         
         if let elementType = T.Iterator.Element.self as? Mappable.Type {
             guard let value = value as? [[String: Any]] else { return nil }
-            return value.flatMap({ (dictionary) -> T.Iterator.Element? in
+            return value.compactMap({ (dictionary) -> T.Iterator.Element? in
                 elementType.init(dictionary: dictionary) as? T.Iterator.Element
             }) as? T
         }
