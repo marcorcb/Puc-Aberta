@@ -23,7 +23,7 @@ struct Schedule: Mappable {
     init(mapper: Mapper) {
         let datesStrings: [String] = mapper.keyPath("dates")
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         self.dates = datesStrings.map { dateFormatter.date(from: $0)! }
         self.type = mapper.keyPath("type")
         self.description = mapper.keyPath("description")

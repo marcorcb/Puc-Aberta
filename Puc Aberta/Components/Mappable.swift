@@ -26,7 +26,7 @@ extension Mappable {
 public class Mapper {
     
     private(set) var dictionary: [String: Any]
-    var dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+    var dateFormat = "yyyy-MM-dd"
     
     init(dictionary: [String: Any]) {
         self.dictionary = dictionary
