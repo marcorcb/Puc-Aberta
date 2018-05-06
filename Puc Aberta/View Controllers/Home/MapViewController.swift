@@ -18,6 +18,7 @@ class MapViewController: BaseViewController {
     
     // MARK: - Members
     
+    private let locationManager = CLLocationManager()
     private var buildings = [Building]()
     var user: User?
     
@@ -37,6 +38,10 @@ class MapViewController: BaseViewController {
     
     func setupUI() {
         self.mapView.delegate = self
+        self.mapView.showsUserLocation = true
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
         let initialLocation = CLLocation(latitude: -19.924542, longitude: -43.993056)
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(initialLocation.coordinate, 1000, 1000)
         self.mapView.setRegion(coordinateRegion, animated: true)
