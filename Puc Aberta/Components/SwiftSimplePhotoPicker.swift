@@ -50,6 +50,14 @@ class SwiftSimplePhotoPicker: NSObject {
 
         actionSheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
 
+        if let popoverPresentationController = actionSheet.popoverPresentationController {
+            popoverPresentationController.sourceView = viewController.view
+            popoverPresentationController.sourceRect = CGRect(x: viewController.view.bounds.midX,
+                                                              y: viewController.view.bounds.midY,
+                                                              width: 0, height: 0)
+            popoverPresentationController.permittedArrowDirections = []
+        }
+
         viewController.present(actionSheet, animated: true, completion: nil)
     }
 
