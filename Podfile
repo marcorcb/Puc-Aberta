@@ -7,10 +7,11 @@ target 'Puc Aberta' do
 
   # Pods for Puc Aberta
   pod 'IQKeyboardManagerSwift'
-  pod 'pop', '~> 1.0'
-  pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'pop'
+  pod 'MBProgressHUD'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'KeychainSwift', '~> 10.0'
+  pod 'KeychainSwift'
+  pod 'SwiftLint'
   
 end

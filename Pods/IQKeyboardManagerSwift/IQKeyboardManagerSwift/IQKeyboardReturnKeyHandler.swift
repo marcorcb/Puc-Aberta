@@ -228,7 +228,7 @@ public class IQKeyboardReturnKeyHandler: NSObject , UITextFieldDelegate, UITextV
                 textView.delegate = modal.textViewDelegate
             }
             
-            if let index = textFieldInfoCache.index(where: { $0.textFieldView == view}) {
+            if let index = textFieldInfoCache.firstIndex(where: { $0.textFieldView == view}) {
 
                 textFieldInfoCache.remove(at: index)
             }
@@ -300,7 +300,7 @@ public class IQKeyboardReturnKeyHandler: NSObject , UITextFieldDelegate, UITextV
         }
 
         //Getting index of current textField.
-        if let index = textFields.index(of: view) {
+        if let index = textFields.firstIndex(of: view) {
             //If it is not last textField. then it's next object becomeFirstResponder.
             if index < (textFields.count - 1) {
                 
@@ -379,9 +379,10 @@ public class IQKeyboardReturnKeyHandler: NSObject , UITextFieldDelegate, UITextV
         aDelegate?.textFieldDidEndEditing?(textField)
     }
     
+    #if swift(>=4.2)
     @available(iOS 10.0, *)
-    @objc public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-
+    @objc public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        
         var aDelegate : UITextFieldDelegate? = delegate
         
         if aDelegate == nil {
@@ -393,6 +394,22 @@ public class IQKeyboardReturnKeyHandler: NSObject , UITextFieldDelegate, UITextV
         
         aDelegate?.textFieldDidEndEditing?(textField, reason: reason)
     }
+    #else
+    @available(iOS 10.0, *)
+    @objc public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+
+        var aDelegate : UITextFieldDelegate? = delegate
+    
+        if aDelegate == nil {
+    
+            if let modal = textFieldViewCachedInfo(textField) {
+                aDelegate = modal.textFieldDelegate
+            }
+        }
+    
+        aDelegate?.textFieldDidEndEditing?(textField, reason: reason)
+    }
+    #endif
 
     @objc public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         

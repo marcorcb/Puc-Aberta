@@ -13,11 +13,11 @@ protocol PADatePickerDelegate: class {
 }
 
 class PADatePickerField: PATextField {
-    
+
     weak var datePickerDelegate: PADatePickerDelegate?
     var pickerView: UIDatePicker!
     let dateFormatter = DateFormatter()
-    
+
     func setDates(maximumDate: Date?, minimumDate: Date?) {
         self.tintColor = .clear
         self.pickerView = UIDatePicker(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 216))
@@ -27,23 +27,21 @@ class PADatePickerField: PATextField {
         self.pickerView.timeZone = TimeZone.current
         self.dateFormatter.locale = Locale.current
         self.dateFormatter.dateStyle = .short
-        
+
         if maximumDate != nil {
             self.pickerView.maximumDate = maximumDate
         }
-        
+
         if minimumDate != nil {
             self.pickerView.minimumDate = minimumDate
         }
-        
+
         self.inputView = self.pickerView
-        self.pickerView.addTarget(self, action: #selector(dateChanged), for: UIControlEvents.valueChanged)
+        self.pickerView.addTarget(self, action: #selector(dateChanged), for: UIControl.Event.valueChanged)
     }
-    
+
     @objc func dateChanged() {
         self.text = self.dateFormatter.string(from: self.pickerView.date)
         self.datePickerDelegate?.didChangeDate(on: self)
     }
 }
-
-

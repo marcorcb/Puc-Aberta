@@ -14,16 +14,16 @@ protocol SplashProtocol: AnyObject {
 }
 
 class SplashPresenter {
-    
+
     weak private var splashView: SplashProtocol?
-    
+
     func attachView(_ view: SplashProtocol) {
         self.splashView = view
     }
-    
+
     func checkUser(cpf: String, birthdate: String) {
         self.splashView?.startLoading()
-        LoginService.login(cpf: cpf, birthdate: birthdate) { (user, error, cache) in
+        LoginService.login(cpf: cpf, birthdate: birthdate) { (user, error, _) in
             self.splashView?.stopLoading()
             if let user = user, error == nil {
                 self.splashView?.didAuthenticate(with: user)

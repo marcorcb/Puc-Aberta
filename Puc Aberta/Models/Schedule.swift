@@ -19,7 +19,7 @@ struct Schedule: Mappable {
     var type: String
     var description: String
     var events: [Event]
-    
+
     init(mapper: Mapper) {
         let datesStrings: [String] = mapper.keyPath("dates")
         let dateFormatter = DateFormatter()

@@ -11,37 +11,37 @@ protocol AuthenticationCoordinatorDelegate: CoordinatorDelegate {
 }
 
 class AuthenticationCoordinator: Coordinator {
-    
+
     weak var delegate: AuthenticationCoordinatorDelegate?
     weak var coordinatorDelegate: CoordinatorDelegate?
     var childCoordinators: [Coordinator] = []
     var navigationController: BaseNavigationController
-    
+
     init(navigationController: BaseNavigationController, delegate: AuthenticationCoordinatorDelegate) {
         self.navigationController = navigationController
         self.coordinatorDelegate = delegate
         self.delegate = delegate
     }
-    
+
     func start() {
         self.navigationController.navigationBar.isHidden = false
-        self.navigationController.navigationBar.barTintColor = #colorLiteral(red: 0.08235294118, green: 0.2549019608, blue: 0.3647058824, alpha: 1)
+        self.navigationController.navigationBar.barTintColor = Colors.appDefault
         self.navigationController.navigationBar.tintColor = .white
         self.showLogin()
     }
-    
+
     func showLogin() {
         let loginViewController = LoginViewController.initFromStoryboard(named: "Authentication")
         loginViewController.delegate = self
         self.navigationController.setViewControllers([loginViewController], animated: true)
     }
-    
+
     func showRegisterType() {
         let registerTypeViewController = RegisterTypeViewController.initFromStoryboard(named: "Authentication")
         registerTypeViewController.delegate = self
         self.navigationController.pushViewController(registerTypeViewController, animated: true)
     }
-    
+
     func showRegister(url: URL) {
         let registerViewController = RegisterViewController.initFromStoryboard(named: "Authentication")
         registerViewController.registerURL = url
@@ -55,7 +55,7 @@ extension AuthenticationCoordinator: LoginViewControllerDelegate {
     func didAuthenticate(with user: User) {
         self.delegate?.didAuthenticate(on: self, with: user)
     }
-    
+
     func didTapRegister() {
         self.showRegisterType()
     }

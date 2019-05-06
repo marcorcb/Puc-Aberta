@@ -13,18 +13,18 @@ protocol RegisterTypeViewControllerDelegate: class {
 }
 
 class RegisterTypeViewController: BaseViewController {
-    
+
     // MARK: - Members
-    
+
     weak var delegate: RegisterTypeViewControllerDelegate?
-    
+
     // MARK: - IBActions
 
     @IBAction func soloRegister(_ sender: Any) {
         guard let url = URL(string: "http://portal.pucminas.br/pucaberta/inscrito_cadastro.php") else { return }
         self.delegate?.didSelectRegister(url: url)
     }
-    
+
     @IBAction func schoolRegister(_ sender: Any) {
         guard let url = URL(string: "http://portal.pucminas.br/pucaberta/escola/escola_cadastro.php") else { return }
         self.delegate?.didSelectRegister(url: url)

@@ -14,7 +14,7 @@ open class JMMaskTextField: UITextField {
     public private(set) var stringMask: JMStringMask?
     fileprivate weak var realDelegate: UITextFieldDelegate?
     
-    override weak open var delegate: UITextFieldDelegate? {
+    override open var delegate: UITextFieldDelegate? {
         get {
             return self.realDelegate
         }
@@ -26,9 +26,7 @@ open class JMMaskTextField: UITextField {
     }
     
     public var unmaskedText: String? {
-        get {
-            return self.stringMask?.unmask(string: self.text) ?? self.text
-        }
+        return self.stringMask?.unmask(string: self.text) ?? self.text
     }
     
     @IBInspectable public var maskString: String? {
@@ -82,13 +80,16 @@ extension JMMaskTextField: UITextFieldDelegate {
         self.realDelegate?.textFieldDidEndEditing?(textField)
     }
     
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+                          replacementString string: String) -> Bool {
         
         let previousMask = self.stringMask
         let currentText: NSString = textField.text as NSString? ?? ""
         
-        if let realDelegate = self.realDelegate, realDelegate.responds(to: #selector(textField(_:shouldChangeCharactersIn:replacementString:))) {
-            let delegateResponse = realDelegate.textField!(textField, shouldChangeCharactersIn: range, replacementString: string)
+        if let realDelegate = self.realDelegate, realDelegate.responds(to:
+            #selector(textField(_:shouldChangeCharactersIn:replacementString:))) {
+            let delegateResponse = realDelegate.textField!(textField, shouldChangeCharactersIn: range,
+                                                           replacementString: string)
             
             if !delegateResponse {
                 return false
@@ -113,7 +114,9 @@ extension JMMaskTextField: UITextFieldDelegate {
         // it means the user tried to delete a mask character, so we'll
         // change the range to include the character right before it
         if finalText == currentText && range.location < currentText.length && range.location > 0 {
-            return self.textField(textField, shouldChangeCharactersIn: NSRange(location: range.location - 1, length: range.length + 1) , replacementString: string)
+            return self.textField(textField, shouldChangeCharactersIn: NSRange(location: range.location - 1,
+                                                                               length: range.length + 1),
+                                  replacementString: string)
         }
         
         if finalText != currentText {
@@ -132,7 +135,8 @@ extension JMMaskTextField: UITextFieldDelegate {
                     cursorLocation = range.location + 1
                 }
                 
-                guard let startPosition = textField.position(from: textField.beginningOfDocument, offset: cursorLocation) else { return false }
+                guard let startPosition = textField.position(from: textField.beginningOfDocument,
+                                                             offset: cursorLocation) else { return false }
                 guard let endPosition = textField.position(from: startPosition, offset: 0) else { return false }
                 textField.selectedTextRange = textField.textRange(from: startPosition, to: endPosition)
             }
@@ -152,4 +156,3 @@ extension JMMaskTextField: UITextFieldDelegate {
     }
     
 }
-

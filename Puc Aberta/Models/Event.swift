@@ -13,7 +13,7 @@ struct Event: Mappable {
     var location: String
     var startTime: String
     var courses: String
-    
+
     init(mapper: Mapper) {
         self.group = mapper.keyPath("group")
         self.description = mapper.keyPath("description")

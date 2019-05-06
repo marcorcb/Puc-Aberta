@@ -9,11 +9,8 @@
 import UIKit
 
 class BaseNavigationController: UINavigationController {
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        get {
             return .lightContent
-        }
     }
 }
-

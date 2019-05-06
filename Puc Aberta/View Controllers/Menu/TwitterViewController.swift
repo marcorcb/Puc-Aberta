@@ -10,18 +10,18 @@ import UIKit
 import MBProgressHUD
 
 class TwitterViewController: BaseViewController {
-    
+
     // MARK: - IBOutlets
 
     @IBOutlet weak var webView: UIWebView!
-    
+
     // MARK: - Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
     }
-    
+
     // MARK: - Private
 
     func setup() {

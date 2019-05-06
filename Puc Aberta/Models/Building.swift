@@ -22,7 +22,7 @@ class Building: NSObject, MKAnnotation {
     var desc: String
     var coordinate: CLLocationCoordinate2D
     var title: String?
-    
+
     init(name: String, type: BuildingType, desc: String, latitude: Double, longitude: Double) {
         self.name = name
         self.type = type
