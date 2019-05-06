@@ -14,13 +14,13 @@ protocol ScheduleProtocol: AnyObject {
 }
 
 class SchedulePresenter {
-    
+
     weak private var scheduleView: ScheduleProtocol?
-    
+
     func attachView(_ view: ScheduleProtocol) {
         self.scheduleView = view
     }
-    
+
     func setupJSON() {
         if let path = Bundle.main.path(forResource: "events", ofType: "json") {
             do {

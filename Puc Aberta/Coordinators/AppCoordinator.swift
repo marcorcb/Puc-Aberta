@@ -10,16 +10,16 @@ import UIKit
 import KeychainSwift
 
 class AppCoordinator: Coordinator {
-    
+
     weak var coordinatorDelegate: CoordinatorDelegate?
     var childCoordinators: [Coordinator] = []
     var navigationController: BaseNavigationController
-    
+
     init(navigationController: BaseNavigationController, delegate: CoordinatorDelegate?) {
         self.navigationController = navigationController
         self.coordinatorDelegate = delegate
     }
-    
+
     func start() {
         let keychain = KeychainSwift()
         if let cpf = keychain.get(Constants.userCpfKey), let birthdate = keychain.get(Constants.userBirthdateKey) {
@@ -28,7 +28,7 @@ class AppCoordinator: Coordinator {
             self.showAuthentication()
         }
     }
-    
+
     func showSplash(cpf: String, birthdate: String) {
         let splashViewController = SplashViewController.initFromStoryboard(named: "Authentication")
         splashViewController.delegate = self
@@ -36,15 +36,17 @@ class AppCoordinator: Coordinator {
         splashViewController.birthdate = birthdate
         self.navigationController.pushViewController(splashViewController, animated: true)
     }
-    
+
     func showAuthentication() {
-        let authenticationCoordinator = AuthenticationCoordinator(navigationController: self.navigationController, delegate: self)
+        let authenticationCoordinator = AuthenticationCoordinator(navigationController: self.navigationController,
+                                                                  delegate: self)
         authenticationCoordinator.start()
         self.childCoordinators.append(authenticationCoordinator)
     }
-    
+
     func showHome(for user: User) {
-        let homeCoordinator = HomeCoordinator(navigationController: self.navigationController, delegate: self, user: user)
+        let homeCoordinator = HomeCoordinator(navigationController: self.navigationController, delegate: self,
+                                              user: user)
         homeCoordinator.start()
         self.childCoordinators.append(homeCoordinator)
     }
@@ -65,7 +67,7 @@ extension AppCoordinator: SplashViewControllerDelegate {
     func didAuthenticate(with user: User) {
         self.showHome(for: user)
     }
-    
+
     func didFailToAuthenticate() {
         self.showAuthentication()
     }
@@ -92,4 +94,3 @@ extension AppCoordinator: HomeCoordinatorDelegate {
 //        self.showAuthentication()
 //    }
 //}
-

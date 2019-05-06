@@ -9,22 +9,22 @@
 import UIKit
 
 class EventTableViewCell: UITableViewCell {
-    
+
     // MARK: - IBOutlets
-    
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var scheduleImageView: UIImageView!
-    
+
     // MARK: - Members
-    
+
     var event: Event? {
         didSet {
             self.setupUI()
         }
     }
-    
+
     // MARK: - Private
-    
+
     func setupUI() {
         guard let event = self.event else { return }
         let group = "Grupo " + event.group

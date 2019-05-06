@@ -10,22 +10,22 @@ import UIKit
 import MBProgressHUD
 
 class CoursesViewController: BaseViewController {
-    
+
     // MARK: - IBOutlets
 
     @IBOutlet weak var webView: UIWebView!
-    
+
     // MARK: - Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
     }
-    
+
     // MARK: - Private
-    
+
     func setup() {
-        let requestURL = URL(string:"https://www.pucminas.br/Graduacao/Paginas/default.aspx")
+        let requestURL = URL(string: "https://www.pucminas.br/Graduacao/Paginas/default.aspx")
         let request = URLRequest(url: requestURL!)
         self.webView.delegate = self
         self.webView.loadRequest(request)
@@ -38,7 +38,7 @@ extension CoursesViewController: UIWebViewDelegate {
     func webViewDidStartLoad(_ webView: UIWebView) {
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
-    
+
     func webViewDidFinishLoad(_ webView: UIWebView) {
         MBProgressHUD.hide(for: self.view, animated: true)
     }

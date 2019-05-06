@@ -16,13 +16,13 @@ protocol LoginProtocol: AnyObject {
 }
 
 class LoginPresenter {
-    
+
     weak private var loginView: LoginProtocol?
-    
+
     func attachView(_ view: LoginProtocol) {
         self.loginView = view
     }
-    
+
     func validate(cpf: String, datePickerField: PADatePickerField) {
         if cpf.count != 11 {
             self.loginView?.showAlert(message: NSLocalizedString("CPF obrigatório", comment: ""))
@@ -34,7 +34,7 @@ class LoginPresenter {
             self.login(cpf: cpf, birthdate: datePickerField.pickerView.date)
         }
     }
-    
+
     func saveLoginFields(cpf: String, birthdate: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -42,10 +42,10 @@ class LoginPresenter {
         keychain.set(cpf, forKey: Constants.userCpfKey)
         keychain.set(dateFormatter.string(from: birthdate), forKey: Constants.userBirthdateKey)
     }
-    
+
     func login(cpf: String, birthdate: Date) {
         self.loginView?.startLoading()
-        LoginService.login(cpf: cpf, birthdate: birthdate) { (user, error, cache) in
+        LoginService.login(cpf: cpf, birthdate: birthdate) { (user, error, _) in
             self.loginView?.stopLoading()
             if let user = user, error == nil {
                 self.saveLoginFields(cpf: cpf, birthdate: birthdate)

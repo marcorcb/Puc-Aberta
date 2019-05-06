@@ -18,20 +18,20 @@ class MyScheduleCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: BaseNavigationController
     var user: User
-    
+
     init(navigationController: BaseNavigationController, delegate: MyScheduleCoordinatorDelegate?, user: User) {
         self.delegate = delegate
         self.coordinatorDelegate = delegate
         self.navigationController = navigationController
         self.user = user
     }
-    
+
     func start() {
         self.showMySchedule()
         self.navigationController.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "icon_myschedule"), selectedImage: #imageLiteral(resourceName: "icon_myschedule"))
-        self.navigationController.navigationBar.barTintColor = #colorLiteral(red: 0.0807383284, green: 0.2549609542, blue: 0.3665698171, alpha: 1)
+        self.navigationController.navigationBar.barTintColor = Colors.appDefault
     }
-    
+
     func showMySchedule() {
         let myScheduleViewController = MyScheduleViewController.initFromStoryboard(named: "Home")
         myScheduleViewController.delegate = self
@@ -47,4 +47,3 @@ extension MyScheduleCoordinator: MyScheduleViewControllerDelegate {
         self.delegate?.openOnMap(lecture: lecture)
     }
 }
-

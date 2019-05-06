@@ -14,14 +14,14 @@ protocol MyScheduleViewControllerDelegate: class {
 }
 
 class MyScheduleViewController: BaseViewController {
-    
+
     // MARK: - IBOutlets
-    
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noScheduleView: UIView!
-    
+
     // MARK: - Members
-    
+
     weak var delegate: MyScheduleViewControllerDelegate?
     var user: User?
     fileprivate var dataSource = [Lecture]() {
@@ -29,16 +29,16 @@ class MyScheduleViewController: BaseViewController {
             self.tableView.reloadData()
         }
     }
-    
+
     // MARK: - Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
     }
-    
+
     // MARK: - Private
-    
+
     func setup() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -47,7 +47,7 @@ class MyScheduleViewController: BaseViewController {
         self.noScheduleView.isHidden = true
         self.dataSource = lectures
     }
-    
+
     func configuredMailComposeViewController(lecture: String) -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
@@ -63,14 +63,18 @@ extension MyScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataSource.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myEventCell", for: indexPath) as! MyEventTableViewCell
-        cell.delegate = self
-        cell.lecture = self.dataSource[indexPath.row]
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "myEventCell", for: indexPath)
+            as? MyEventTableViewCell {
+            cell.delegate = self
+            cell.lecture = self.dataSource[indexPath.row]
+            return cell
+        }
+
+        return UITableViewCell()
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? MyEventTableViewCell else { return }
         let mailComposerVC = self.configuredMailComposeViewController(lecture: (cell.lecture?.lecture)!)
@@ -91,7 +95,8 @@ extension MyScheduleViewController: MyEventTableViewCellDelegate {
 // MARK: - MFMailComposeViewControllerDelegate
 
 extension MyScheduleViewController: MFMailComposeViewControllerDelegate {
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult,
+                               error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
 }

@@ -15,7 +15,7 @@ struct User: Mappable {
     var grade: String?
     var lectures: [Lecture]?
     var courses: [Course]?
-    
+
     init(mapper: Mapper) {
         self.name = mapper.keyPath("inscrito.nome")
         let birthdateString: String = mapper.keyPath("inscrito.nasc")

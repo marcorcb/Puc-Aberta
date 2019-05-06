@@ -12,7 +12,7 @@ struct Lecture: Mappable {
     var unity: String?
     var location: String?
     var date: Date?
-    
+
     init(mapper: Mapper) {
         self.lecture = mapper.keyPath("palestra")
         self.subscriptionStatus = mapper.keyPath("status_inscricao")

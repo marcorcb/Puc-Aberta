@@ -15,3 +15,7 @@ struct Constants {
 extension Notification.Name {
     static let openOnMap = Notification.Name("openOnMap")
 }
+
+struct Colors {
+    static let appDefault = #colorLiteral(red: 0.08235294118, green: 0.2549019608, blue: 0.3647058824, alpha: 1)
+}

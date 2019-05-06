@@ -9,7 +9,7 @@
 struct Unit: Mappable {
     var name: String
     var schedule: Schedule
-    
+
     init(mapper: Mapper) {
         self.name = mapper.keyPath("name")
         self.schedule = mapper.keyPath("schedule")
